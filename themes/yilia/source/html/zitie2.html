@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>怀瑾书院一到六年级生字练习字帖</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/flying/css/zitie2.css">
+  <script src="/flying/js/shengzi.js"></script>
+  <script src="/flying/js/jquery.min.js"></script>
+  <script src="/flying/js/vue.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="author" content="http://photo.guolaijie.com/100day/grid.png-small" />
+  <meta name="description" content="一到六年级的生字练习都在这里了，学书法需临帖，临帖需认真，写好每一个笔画！" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="control">
+      <div class='setting'>
+        <h3>打印格式设置</h3>
+        <ul>
+          <li>
+            <label>格子：</label>
+            <select v-model="cname">
+              <option v-for="(item,key) in canmeList" :value="key">{{key}}</option>
+            </select>
+          </li>
+          <li><label>字体：</label>
+            <select name="family" id="family" v-model="familyIndex">
+              <option v-for="(i,index) in familyData" :value="index" :disabled="!i.isLoad">{{i.name}}</option>
+            </select>
+          </li>
+          <li><label>字体大小：</label>
+            <select name="size" id="size" v-model="size">
+              <option v-for="(i,index) in itemData" :value="i">{{i}}</option>
+            </select>
+          </li>
+          <li><label>配色方案：</label>
+            <select name="color" id="color" v-model="color">
+              <option v-for="(i,index) in colorList" :value="i">{{i.name}}</option>
+            </select>
+          </li>
+          <li><label>重复行数：</label>
+            <select name="itemLen" id="itemLen" v-model="lineNum">
+              <option v-for="i in [1,2,3,5,10]" :value="i">每字{{i}}行</option>
+            </select>
+          </li>
+          <li><label>内容：</label><textarea v-model="content"></textarea></li>
+          <li><label>字库：</label>
+            <select v-model="no">
+              <option v-for="(item,key) in shengzi" :value="key">{{key}}</option>
+            </select>
+          </li>
+
+
+          <li>
+            <div class="notice">用PC打开方便些哦！</div>
+          </li>
+        </ul>
+      </div>
+      <div class="act">
+        <div class="c"><button @click="print">打印</button></div>
+      </div>
+    </div>
+    <div class="view" :class="color.cname" style="page-break-after: always;">
+
+      <dl class="page" :class="canmeList[cname]">
+        <dd :style="{ fontFamily: familyData[familyIndex].value }" v-for="(item,index) in constr">
+          <h1 class="mtitle">
+            <img class="plogo" src="/flying/images/slogo.png" />
+            <span>三快书法培训学校(南宁/北海/来宾)校区专用练习纸</span>
+          </h1>
+          <h5 class="ptitle">
+            <span>姓名：</span>
+            <span>日期：</span>
+            <span>上课时段：</span>
+          </h5>
+          <ul>
+            <li v-for="m in item">
+              <p>
+                <i v-for="n in len" :style="currstyle">
+                  <span class="a"></span>
+                  <span class="b"></span>
+                  <span class="c"></span>
+                  <span>{{m}}</span>
+                </i>
+              </p>
+            </li>
+          </ul>
+          <div class="footer">
+            <p><span>习字热线：13977997269(韦老师电话/微信)</span>
+              <span>家长签字：<b></b></span></p>
+            <p><span>格子：{{size}} X {{size}}</span> <span>{{no}}</span> <span>第{{index+1}}页</span></p>
+
+          </div>
+          <div class="hr"></div>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</body>
+<script src="/flying/js/zitie2.js"></script>
+
+</html>

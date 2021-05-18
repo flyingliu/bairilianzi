@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>书法格式设置</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/flying/css/grid.css">
+  <script src="/flying/js/tiku.js"></script>
+  <script src="/flying/js/jquery.min.js"></script>
+  <script src="/flying/js/vue.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="author" content="http://photo.guolaijie.com/100day/grid.png-small" />
+  <meta name="description" content="书法创作神器物！" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="control">
+      <div class='setting'>
+        <h3>打印格式设置</h3>
+        <ul>
+          <li>
+            <label>设置：</label>
+            <div><label>列数</label><input type="number" v-model="row" maxlength="2" min="4" max="12"></div>
+            <div><label>行数</label><input type="number" v-model="col" maxlength="2" min="4" max="18"></div>
+            <div><label>格子(cm)</label><input type="number" v-model="item" maxlength="2"></div>
+          </li>
+          <li><label>字体：</label>
+            <select name="family" id="family" v-model="familyIndex">
+              <option v-for="(i,index) in familyData" :value="index" :disabled="!i.isLoad">{{i.name}}</option>
+            </select>
+          </li>
+          <li><label>内容：</label><textarea v-model="content"></textarea></li>
+          <li><label>落款：</label><input v-model="end"></li>
+          <li><label>标题：</label><input v-model="title"></textarea></li>
+          <li><label>副标：</label><input v-model="sub"></li>
+          <li><label>题库：</label>
+            <select v-model="no">
+              <option v-for="(item,key) in tiku" :value="key">{{key}} 号题</option>
+            </select>
+          </li>
+
+          <li><label>统计：</label>
+            <div>格子数：<b>{{grid}}</b>，内容字数：<b>{{conNum}}</b></div>
+          </li>
+          <li>
+            <div class="notice">用PC打开方便些哦！</div>
+          </li>
+        </ul>
+      </div>
+      <div class="act">
+        <div class="c"><button @click="print">打印</button></div>
+      </div>
+    </div>
+    <div class="view" style="page-break-after: always;">
+      <div class="title">北海三快书法培训学校专用</div>
+      <div class="con" :style="{width:widthAndCm,height: heightCm }">
+        <div class="one" v-html="format(content)"
+          :style="{ width: widthCm, height: heightCm, fontSize: itemCm, lineHeight:line, fontFamily: familyData[familyIndex].value }">
+        </div>
+        <div class="two" v-html="formatend(end)"
+          :style="{width:rowCm,height: heightCm,fontSize: itemEndCm, lineHeight:itemEndCm, fontFamily: familyData[familyIndex].value }">
+        </div>
+        <div class="abc">
+          <h3 class="sub">{{sub}} 姓名：_________</h3>
+        </div>
+      </div>
+
+      <p v-if="loading" class="loading">正在加载字体，请切换字体或者稍等...</p>
+    </div>
+  </div>
+</body>
+<script src="/flying/js/grid.js"></script>
+</html>
