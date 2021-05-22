@@ -1,0 +1,226 @@
+ html,
+ body {
+   margin: 0;
+   padding: 0;
+ }
+
+ #app {
+   display: flex;
+   flex-flow: row-reverse nowrap;
+ }
+
+ .view {
+   flex-grow: 1;
+ }
+
+
+ .control {
+   width: 400px;
+   font: 14px/2 arial;
+   padding: 0 0 10px 0;
+   opacity: .8;
+   margin-left: 40px;
+   border-left: 1px dashed #333;
+   background: #eee;
+   min-height: 100vh;
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: flex-start;
+ }
+
+ .control .act {
+   padding: 20px;
+ }
+
+ .control h3 {
+   text-align: center;
+   font: 20px/2 arial;
+   padding: 20px 0;
+ }
+
+ .control ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ }
+
+ .control ul li {
+   display: flex;
+   padding: 0px 10px 10px 10px;
+   align-items: center;
+ }
+
+ .control ul li div {
+   margin-right: 5px;
+ }
+
+ .control ul li div input {
+   width: 40px;
+ }
+
+
+ .con {
+   display: flex;
+   flex-flow: row-reverse nowrap;
+   justify-content: center;
+   background: #eee;
+   margin: 20px auto;
+   position: relative;
+   /* padding: 20px; */
+ }
+
+ .abc {
+   position: absolute;
+   bottom:-40px;
+   right:0;
+   font-size:10px;
+ }
+
+
+ .notice {
+   text-align: right;
+   color: #999;
+   width:100%;
+   font:12px/2 arial;
+ }
+
+ .one,
+ .two {
+   margin: 0 auto;
+   display: flex;
+   flex-direction: row-reverse;
+   flex-flow: column wrap-reverse;
+   align-content: flex-start;
+   background: #eee;
+   font: 1cm/2 arial;
+   text-align: center;
+   border-left: 1px solid #000;
+   box-shadow: 0 0 0 1px rgba(0, 0, 0, 1);
+ }
+
+ .two {
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+ }
+
+
+ textarea,
+ input {
+   font: 14px/2 arial;
+   padding: 5px 10px;
+   flex-grow: 1;
+ }
+
+ body {
+   box-sizing: border-box;
+   min-height: 100vh;
+ }
+
+ .one i {
+   border-top: 1px solid #333;
+   border-right: 1px solid #333;
+   font-style: normal;
+   box-sizing: border-box;
+ }
+
+ .two i {
+   font-style: normal;
+   box-sizing: border-box;
+ }
+
+ .two {
+   border-top: 1px solid #333;
+   box-sizing: border-box;
+ }
+
+
+
+
+ button {
+   margin: auto;
+   background: #3388ff;
+   font: 18px/2 arial;
+   border: 0;
+   border-radius: 10px;
+   color: #fff;
+   padding: 10px 20px;
+   width: 100%;
+   cursor: pointer;
+ }
+
+ h1,
+ h3,
+ p {
+   margin: 0;
+ }
+
+ .c {
+   text-align: center;
+
+ }
+
+ .title {
+   font: bold 20px/2 arial;
+   border: 0;
+   width: 100%;
+   padding: 20px 0 0 0;
+   text-align: center;
+ }
+
+ .sub {
+   font: 14px/2 arial;
+   border: 0;
+   width: 100%;
+   text-align: center;
+
+ }
+
+ .name {
+   text-align: right;
+   border-bottom: 1px solid #000;
+   font: 14px/2 arial;
+   border: 0;
+   margin-bottom: 40px;
+ }
+
+ .loading {
+   text-align: center;
+   padding: 20px;
+   font: 14px/2 arial;
+   color: #999;
+ }
+
+
+ @media print {
+   .control {
+     display: none;
+   }
+ }
+
+ /* @media screen and (max-device-width:960px) {
+   #app {
+     display: flex;
+     flex-flow: column-reverse nowrap;
+     justify-content: space-around;
+     min-height: 100vh;
+
+   }
+
+   .view {
+     flex-grow: 1;
+   }
+
+   .control {
+     font: 14px/2 arial;
+     margin-left: 0;
+     border-left: 0px dashed #333;
+     background: #eee;
+     min-height: auto;
+     display: flex;
+     width: 100vw;
+     flex: 1;
+     flex-flow: column nowrap;
+     justify-content: flex-start;
+   }
+ } */

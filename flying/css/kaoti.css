@@ -1,0 +1,251 @@
+:root {
+  --red: #cd1d24;
+  --g: #f6ce7b;
+  --bg: #eee;
+  --c: #333;
+}
+
+h1,
+h5,
+p,
+html,
+dl,
+dd,
+ul,
+li,
+body {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 100px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--c);
+  font: 14px/1.8 arial;
+}
+
+.mt {
+  position: absolute;
+  font: 20px/30px arial;
+  top: 406px;
+  text-align: center;
+  width: 100vw;
+
+}
+
+#qawrap {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.disable {
+  pointer-events: none;
+}
+
+#qawrap dl {
+  width: 400vw;
+  height: 100vh;
+  display: flex;
+}
+
+#qawrap dl dd {
+  width: 100vw;
+  height: 100vh;
+}
+
+#qawrap dl dd ul {
+  padding: 0 20px 20px;
+}
+
+#qawrap dl dd li {
+  border: 1px solid #999;
+  padding: 5px;
+}
+
+#qawrap dl dd h5 {
+  font: bold 16px/1.5 arial;
+  padding: 20px;
+}
+
+#qawrap dl dd img {
+  max-width: 100%;
+}
+
+#qawrap dl dd li.active {
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+#scroll {
+  position: relative;
+
+}
+
+#scroll .option {
+  position: absolute;
+  top: calc(100vh - 100px);
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#scroll .option a {
+  margin: 0 30px;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.daan {
+  text-align: left;
+  padding: 20px;
+}
+
+.daan dd {
+  padding: 0 0 10px 0;
+}
+
+.daan dd li { padding:2px 0;}
+
+.daan img {
+  max-width: 100%;
+  display: block;
+}
+
+.daan .active {
+  background: #cd1d24;
+  color: #fff;
+}
+
+.daan .your {
+  font-weight: bold;
+  position: relative;
+}
+
+.daan .your:after {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #cd1d24;
+  content: '';
+  border-radius: 50%;
+  left: -15px;
+  top:calc(50% - 4px);
+}
+
+
+
+.result {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100vw;
+  text-align: center;
+}
+
+#code {
+  position: absolute;
+  z-index: 9;
+  background: red;
+}
+
+#code canvas {}
+
+.btn {
+  background: var(--red);
+  color: #fff;
+  border: 0;
+  font: 16px/40px arial;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+
+.start {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#mycut {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: -99999vw;
+  left: 0;
+  z-index: 99;
+  background: var(--red);
+  pointer-events: none;
+  opacity: 1;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#mycut h5 {
+  letter-spacing: .8em;
+  font: 14px/2 arial;
+  text-align: center;
+}
+
+#mycut .logo img {
+  width: 80vw;
+}
+
+#mycut h2 b {
+  font: 80px/1.2 arial;
+  display: block;
+
+}
+
+#mycut h2 b:after {
+  content: '¥';
+  font: 20px/1.2 arial;
+}
+
+#mycut .info {
+  letter-spacing: .2em;
+}
+
+.mydown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  opacity: .01;
+  pointer-events: auto;
+}
+
+.savebtn {
+  padding: 20px;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.con {
+  pointer-events: none;
+}
+
+.con .btn {
+  position: relative;
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.link {
+  border: 0px;
+  background: transparent;
+}

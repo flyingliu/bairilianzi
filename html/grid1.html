@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <title>书法格式设置</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/flying/css/grid1.css">
+  <script src="/flying/js/tiku.js"></script>
+  <script src="/flying/js/jquery.min.js"></script>
+  <script src="/flying/js/vue.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="http://photo.guolaijie.com/100day/grid.png-small">
+  <meta name="description" content="书法创作神器物！">
+</head>
+
+<body>
+  <div id="app">
+    <div class="control">
+      <div class="setting">
+        <h3>打印格式设置</h3>
+        <ul>
+          <li>
+            <label>格子：</label>
+            <div><input step="0.1" type="number" v-model="item" maxlength="2"><label>(cm)</label></div>
+          </li>
+          <li><label>字体：</label>
+            <select name="family" id="family" v-model="familyIndex">
+              <option v-for="(i,index) in familyData" :value="index">{{i.name}}</option>
+            </select>
+          </li>
+          <li><label>内容：</label><textarea v-model="content"></textarea></li>
+          <li><label>题库：</label>
+            <select v-model="no" placeholder="请选择题号">
+              <option v-for="(item,key) in tiku" :value="key">{{key}} 号题</option>
+            </select>
+          </li>
+          <li><label>配色方案：</label>
+            <select name="color" id="color" v-model="color">
+              <option v-for="(i,index) in colorList" :value="i">{{i.name}}</option>
+            </select>
+          </li>
+          <li>
+            <div class="notice">用PC打开方便些哦！</div>
+          </li>
+        </ul>
+      </div>
+      <div class="act">
+        <div class="c"><button @click="print">打印</button></div>
+      </div>
+    </div>
+    <div class="views">
+      <div class="view" :class="color.cname" v-for="strs in contentFormat">
+        <div class="con">
+          <h1 class="mtitle">
+            <img class="plogo" src="/flying/images/slogo.png">
+            <span>三快书法培训学校(南宁/北海/来宾)校区专用练习纸</span>
+          </h1>
+          <div class="one" :style="{ fontSize: itemCm, lineHeight:line, fontFamily: familyData[familyIndex].value }">
+            <p v-for="(z,index) in strs" :class="(index + 1) % row === 0 ? 'active' : 'noact'" :style="{width:item * 0.9375 + 'cm',height:item * 2 + 0.4 + 'cm'}">
+              <span :style="{width:item * 0.9375+'cm',height:item+'cm'}">{{z}}</span>
+              <span :style="{width:item * 0.9375+'cm',height:item+'cm'}"></span>
+            </p>
+          </div>
+          <div class="abc">
+            <h3 class="sub">{{row}} * {{col}} * 2 = {{row*col}} * 2 &emsp; 姓名：__________________</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="/flying/js/grid1.js"></script>
+
+</html>
