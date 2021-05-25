@@ -1,5 +1,7 @@
 ---
 title: Hello World,
+date: 2000-12-12 12:00
+tags: test
 ---
 
 
