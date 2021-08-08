@@ -30,7 +30,7 @@ var vm = new Vue({
     },{
       name: '卢中南楷体',
       value: 'luzhonglan',
-      url: 'http://photo.guolaijie.com/css/font/luzhongnan.css',
+      url: 'http://photo.guolaijie.com/css/font/luzhongnan1.css',
       isLoad: false,
       index: 15
     }, {
