@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "dawang";
+  src: url("dawang.woff2") format("woff2"),
+       url("dawang.woff") format("woff"),
+       url("dawang.ttf") format("truetype"),
+       url("dawang.eot") format("embedded-opentype"),
+       url("dawang.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

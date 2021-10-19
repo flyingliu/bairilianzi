@@ -18,103 +18,103 @@ var vm = new Vue({
     familyData: [{
       name: '田英章楷体',
       value: 'font',
-      url: 'http://photo.guolaijie.com/css/font/font.css',
+      url: '/flying/font/font.css',
       isLoad: false,
       index: 0
     }, {
       name: '楷体_GB2312',
       value: 'KaiTi_GB2312',
-      url: 'http://photo.guolaijie.com/css/font/KaiTi_GB2312.css',
+      url: '/flying/font/KaiTi_GB2312.css',
       isLoad: false,
       index: 1
     },{
       name: '卢中南楷体',
       value: 'luzhonglan',
-      url: 'http://photo.guolaijie.com/css/font/luzhongnan1.css',
+      url: '/flying/font/luzhongnan1.css',
       isLoad: false,
       index: 15
     }, {
       name: '米芾真迹体',
       value: 'mifu',
-      url: 'http://photo.guolaijie.com/css/font/mifu.css',
+      url: '/flying/font/mifu.css',
       isLoad: false,
       index: 15
     }, {
       name: '爨宝子字体',
       value: 'SXS-Cuanbaozibei',
-      url: 'http://photo.guolaijie.com/css/font/SXS-Cuanbaozibei.css',
+      url: '/flying/font/SXS-Cuanbaozibei.css',
       isLoad: false,
       index: 3
     }, {
       name: '字库堂楷体',
       value: 'zikutanghkt',
-      url: 'http://photo.guolaijie.com/css/font/zikutanghkt.css',
+      url: '/flying/font/zikutanghkt.css',
       isLoad: false,
       index: 4
     }, {
       name: '毛泽东草书',
       value: 'maozedong',
-      url: 'http://photo.guolaijie.com/css/font/maozedong.css',
+      url: '/flying/font/maozedong.css',
       isLoad: false,
       index: 5
     }, {
       name: '金文大篆体',
       value: 'dazhuan',
-      url: 'http://photo.guolaijie.com/css/font/dazhuan.css',
+      url: '/flying/font/dazhuan.css',
       isLoad: false,
       index: 6
     }, {
       name: '方正小篆体',
       value: 'xiaozhuan',
-      url: 'http://photo.guolaijie.com/css/font/xiaozhuan.css',
+      url: '/flying/font/xiaozhuan.css',
       isLoad: false,
       index: 7
     }, {
       name: '于右任标准草书体',
       value: 'yuyouren',
-      url: 'http://photo.guolaijie.com/css/font/yuyouren.css',
+      url: '/flying/font/yuyouren.css',
       isLoad: false,
       index: 8
     }, {
       name: '田英章行书',
       value: 'tyzxs',
-      url: 'http://photo.guolaijie.com/css/font/tyzxs.css',
+      url: '/flying/font/tyzxs.css',
       isLoad: false,
       index: 9
     }, {
       name: '章草',
       value: 'zhangcao',
-      url: 'http://photo.guolaijie.com/css/font/tyzxs.css',
+      url: '/flying/font/tyzxs.css',
       isLoad: false,
       index: 10
     },{
       name: '文征明',
       value: 'wenzhengming',
-      url: 'http://photo.guolaijie.com/css/font/wenzhengming.css',
+      url: '/flying/font/wenzhengming.css',
       isLoad: false,
       index: 13
     }, {
       name: '大王黄庭经小楷',
       value: 'dawang',
-      url: 'http://photo.guolaijie.com/css/font/dawang.css',
+      url: '/flying/font/dawang.css',
       isLoad: false,
       index: 11
     }, {
       name: '荆霄鹏楷体',
       value: 'jinxiaopen',
-      url: 'http://photo.guolaijie.com/css/font/jinxiaopen.css',
+      url: '/flying/font/jinxiaopen.css',
       isLoad: false,
       index: 12
     }, {
       name: '姜浩楷体',
       value: 'jianghao',
-      url: 'http://photo.guolaijie.com/css/font/jianghao.css?v=1',
+      url: '/flying/font/jianghao.css?v=1',
       isLoad: false,
       index: 13
     }, {
       name: '曹全碑',
       value: '书体坊续曹全碑_0',
-      url: 'http://photo.guolaijie.com/css/font/caoquan.css',
+      url: '/flying/font/caoquan.css',
       isLoad: false,
       index: 14
     }]

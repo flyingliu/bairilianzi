@@ -3,20 +3,20 @@ var vm = new Vue({
   data: {
     color: {
       name: '彩色',
-      cname: 'color',
+      cname: 'color'
     },
     colorList: [
       {
         name: '彩色',
-        cname: 'color',
+        cname: 'color'
       },
       {
         name: '红色',
-        cname: 'color1',
+        cname: 'color1'
       },
       {
         name: '经典黑白',
-        cname: 'classic',
+        cname: 'classic'
       }
     ],
     no: 0,
@@ -37,88 +37,110 @@ var vm = new Vue({
     familyData: [{
       name: '田英章楷体',
       value: 'font',
-      url: 'http://photo.guolaijie.com/css/font/font.css',
+      url: '/flying/font/font.css',
       isLoad: false,
       index: 0
     }, {
       name: '楷体_GB2312',
       value: 'KaiTi_GB2312',
-      url: 'http://photo.guolaijie.com/css/font/KaiTi_GB2312.css',
+      url: '/flying/font/KaiTi_GB2312.css',
       isLoad: false,
       index: 1
     }, {
       name: '田英章行书',
       value: 'tyzxs',
-      url: 'http://photo.guolaijie.com/css/font/tyzxs.css',
+      url: '/flying/font/tyzxs.css',
       isLoad: false,
       index: 9
     }, {
       name: '卢中南楷体',
       value: 'luzhonglan',
-      url: 'http://photo.guolaijie.com/css/font/luzhongnan.css',
+      url: '/flying/font/luzhongnan.css',
       isLoad: false,
       index: 10
-    },{
+    }, {
       name: '大王黄庭经小楷',
       value: 'dawang',
-      url: 'http://photo.guolaijie.com/css/font/dawang.css',
+      url: '/flying/font/dawang.css',
       isLoad: false,
       index: 11
     }, {
       name: '荆霄鹏楷体',
       value: 'jinxiaopen',
-      url: 'http://photo.guolaijie.com/css/font/jinxiaopen.css',
+      url: '/flying/font/jinxiaopen.css',
       isLoad: false,
       index: 12
     }, {
       name: '姜浩楷体',
       value: 'jianghao',
-      url: 'http://photo.guolaijie.com/css/font/jianghao.css?v=1',
+      url: '/flying/font/jianghao.css?v=1',
       isLoad: false,
       index: 13
     }, {
       name: '曹全碑',
       value: '书体坊续曹全碑_0',
-      url: 'http://photo.guolaijie.com/css/font/caoquan.css',
+      url: '/flying/font/caoquan.css',
       isLoad: false,
       index: 14
     }]
   },
   watch: {
-    no (a) {
+    no(a) {
       this.getStr()
     },
-    item (a) {
+    item(a) {
       this.getRowCol()
-      // this.format(this.content)
+    // this.format(this.content)
     }
   },
+  directives: {
+    last: {
+      // 指令的定义
+      update: function (el) {
+
+        // Focus the element
+        const text = el.innerText
+        const eleft = el.offsetLeft
+        const Arr = ['。', '，','《','》','！','？',',','.','?','!']
+        console.log('text',text, eleft)
+        // const isLast = computed(() => {
+        //   return str => Arr.includes(str)
+        // })
+        if(eleft < 6 && Arr.includes(text)) {
+          // el.classList = ['isLast']
+          console.log(text,eleft)
+        }
+
+      }
+    }
+  },
+
   computed: {
-    grid () {
+    grid() {
       return this.row * this.col
     },
-    conNum () {
+    conNum() {
       return this.content.split('').length
     },
-    widthCm () {
+    widthCm() {
       return this.row * this.item + 'cm'
     },
-    widthAndCm () {
+    widthAndCm() {
       return (Number(this.row) + 1) * this.item + 'cm'
     },
-    heightCm () {
+    heightCm() {
       return this.col * this.item + 'cm'
     },
-    itemCm () {
+    itemCm() {
       return this.item * 0.75 + 'cm'
     },
-    rowCm () {
+    rowCm() {
       return this.item + 'cm'
     },
-    line () {
+    line() {
       return this.item + 'cm'
     },
-    contentFormat () {
+    contentFormat() {
       const arr = this.content ? this.content.split('') : ['']
       const allstrs = []
       this.getRowCol()
@@ -138,7 +160,7 @@ var vm = new Vue({
     }
   },
   methods: {
-    getQueryString (name, url) {
+    getQueryString(name, url) {
       var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
       if (url) {
         try {
@@ -157,12 +179,12 @@ var vm = new Vue({
         return null
       }
     },
-    print () {
+    print() {
       // document.title = this.title + this.sub
       window.print()
     },
 
-    format (str) {
+    format(str) {
       this.allstrs = []
       const arr = str.split('')
       this.getRowCol()
@@ -180,9 +202,8 @@ var vm = new Vue({
 
       console.log(this.allstrs)
       return this.allstrs
-
     },
-    getHtml (arr) {
+    getHtml(arr) {
       let strs = arr.map((item, index) => {
         const myclass = (index + 1) % this.row === 0 ? 'active' : 'noact'
         return ``
@@ -191,7 +212,7 @@ var vm = new Vue({
       // console.log(strs)
       return strs
     },
-    downLoadCss (url, callback) {
+    downLoadCss(url, callback) {
       var elem = document.createElement('link')
       elem.rel = 'stylesheet'
       elem.type = 'text/css'
@@ -204,11 +225,11 @@ var vm = new Vue({
         }
       }
     },
-    getRowCol () {
+    getRowCol() {
       this.row = parseInt(18 / (this.item * 0.9375))
       this.col = parseInt(24 / (this.item * 2 + 0.4))
     },
-    getStr () {
+    getStr() {
       const no = this.no
       let str = tiku[no]
       if (str) {
@@ -218,8 +239,7 @@ var vm = new Vue({
       }
     }
   },
-  mounted () {
-
+  mounted() {
     const _this = this
     this.familyData.map(item => {
       this.downLoadCss(item.url, function () {

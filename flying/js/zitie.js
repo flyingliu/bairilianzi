@@ -26,55 +26,55 @@ var vm = new Vue({
     familyData: [{
       name: '田英章楷体',
       value: 'font',
-      url: 'http://photo.guolaijie.com/css/font/font.css',
+      url: '/flying/font/font.css',
       isLoad: false,
       index: 0
     }, {
       name: '楷体_GB2312',
       value: 'KaiTi_GB2312',
-      url: 'http://photo.guolaijie.com/css/font/KaiTi_GB2312.css',
+      url: '/flying/font/KaiTi_GB2312.css',
       isLoad: true,
       index: 1
     },{
       name: '卢中南楷体',
       value: 'luzhonglan',
-      url: 'http://photo.guolaijie.com/css/font/luzhongnan.css',
+      url: '/flying/font/luzhongnan.css',
       isLoad: false,
       index: 8
     }, {
       name: '字库堂楷体',
       value: 'zikutanghkt',
-      url: 'http://photo.guolaijie.com/css/font/zikutanghkt.css',
+      url: '/flying/font/zikutanghkt.css',
       isLoad: false,
       index: 2
     }, {
       name: '吴玉生行楷繁体',
       value: 'WFT201911-01',
-      url: 'http://photo.guolaijie.com/css/font/wuyusheng.css',
+      url: '/flying/font/wuyusheng.css',
       isLoad: false,
       index: 3
     }, {
       name: '大王黄庭经小楷',
       value: 'dawang',
-      url: 'http://photo.guolaijie.com/css/font/dawang.css',
+      url: '/flying/font/dawang.css',
       isLoad: false,
       index: 4
     }, {
       name: '荆霄鹏楷体',
       value: 'jinxiaopen',
-      url: 'http://photo.guolaijie.com/css/font/jinxiaopen.css',
+      url: '/flying/font/jinxiaopen.css',
       isLoad: false,
       index: 5
     }, {
       name: '姜浩楷体',
       value: 'jianghao',
-      url: 'http://photo.guolaijie.com/css/font/jianghao.css?v=1',
+      url: '/flying/font/jianghao.css?v=1',
       isLoad: false,
       index: 6
     }, {
       name: '曹全碑',
       value: '书体坊续曹全碑_0',
-      url: 'http://photo.guolaijie.com/css/font/caoquan.css',
+      url: '/flying/font/caoquan.css',
       isLoad: false,
       index: 7
     }]
